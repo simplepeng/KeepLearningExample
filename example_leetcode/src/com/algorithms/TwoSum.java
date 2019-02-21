@@ -1,9 +1,11 @@
+package com.algorithms;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 两数之和
+ * 1.两数之和
  */
 public class TwoSum {
 
@@ -19,7 +21,7 @@ public class TwoSum {
      * 暴力法
      * 暴力法很简单。遍历每个元素 xx，并查找是否存在一个值与 target - xtarget−x 相等的目标元素。
      */
-    public static int[] twoSum_1(int[] nums, int target) {
+    private static int[] twoSum_1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] == target - nums[i]) {
@@ -33,7 +35,7 @@ public class TwoSum {
     /**
      * 两遍哈希表
      */
-    public static int[] twoSum_2(int[] nums, int target) {
+    private static int[] twoSum_2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
@@ -50,7 +52,7 @@ public class TwoSum {
     /**
      * 一遍哈希表
      */
-    public static int[] twoSum_3(int[] nums, int target) {
+    private static int[] twoSum_3(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
