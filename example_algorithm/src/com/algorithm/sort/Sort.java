@@ -12,8 +12,9 @@ public class Sort {
         int arr[] = { 1, 33, 22, 11, 66, 33, 89, 75, 24 };
         System.out.println(Arrays.toString(arr));
 
+        quickSort(arr);
         // selectionSort(arr);
-        insertionSort(arr);
+        // insertionSort(arr);
 
         System.out.println(Arrays.toString(arr));
     }
@@ -34,6 +35,13 @@ public class Sort {
                 }
             }
         }
+    }
+
+    /**
+     * 快速排序
+     */
+    private static void quickSort(int[] arrr){
+        
     }
 
     /**
@@ -60,12 +68,12 @@ public class Sort {
     private static void insertionSort(int[] arr) {
         int length = arr.length;
 
-        // 下标从1开始，以为0下标已经被当成有序序列
+        // 下标从1开始，因为0下标已经被当成有序序列
         for (int i = 1; i < length; i++) {
-            int current = arr[i];
-            int preIndex = i - 1;
+            int current = arr[i];//当前要插入的元素
+            int preIndex = i - 1;//未排序序列的index
 
-            // 已排序preIndex下标的元素如果大于当前未排序下标的元素
+            // 如果未排序的元素大于当前要插入的元素，继续执行循环
             // 并且preIndex的下标要不小于0
             while (preIndex >= 0 && arr[preIndex] > current) {
                 arr[preIndex + 1] = arr[preIndex];// preIndex的元素后移一位
